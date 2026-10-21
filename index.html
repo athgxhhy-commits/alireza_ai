@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هوش مصنوعی علیرضا سیاحی</title>
+<style>
+body{margin:0;background:#10131a;color:white;font-family:Tahoma,sans-serif}
+header{text-align:center;padding:20px;background:#191e29}
+#chat{padding:15px;height:60vh;overflow:auto}
+.msg{padding:12px;margin:10px 0;border-radius:12px;white-space:pre-wrap}
+.user{background:#315ee7}
+.bot{background:#242b39}
+footer{display:flex;gap:8px;padding:12px}
+textarea{width:75%;padding:12px;border-radius:10px}
+button{padding:12px;background:#4775ff;color:white;border:0;border-radius:10px}
+</style>
+</head>
+<body>
+<header>
+<h3>🧠 هوش مصنوعی من</h3>
+<p>سازنده: علیرضا سیاحی ❤️</p>
+</header>
+<div id="chat">
+<div class="msg bot">سلام علیرضا! 👋 به هوش مصنوعی من خوش اومدی.</div>
+</div>
+<footer>
+<textarea id="q" placeholder="سؤالت رو بنویس..."></textarea>
+<button onclick="send()">ارسال</button>
+</footer>
+<script>
+function send(){
+let q=document.getElementById('q');
+let chat=document.getElementById('chat');
+let s=q.value.trim();
+if(!s)return;
+let u=document.createElement('div');
+u.className='msg user';u.textContent=s;chat.appendChild(u);
+let b=document.createElement('div');
+b.className='msg bot';
+b.textContent='پیامت دریافت شد! برای پاسخ هوشمند واقعی، باید موتور هوش مصنوعی رو وصل کنیم.';
+chat.appendChild(b);
+q.value='';chat.scrollTop=chat.scrollHeight;
+}
+</script>
+</body>
+</html>
